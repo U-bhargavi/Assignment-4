@@ -1,0 +1,152 @@
+SHELL SCRIPTING:
+  str="strawberry"
+if[$str="strawberry"]
+then
+ echo $ str:"the values are compared and its true".
+ else
+echo "values are not compared here"
+fi
+str="mango"
+if[$str="orange"]
+then
+echo"the value are equal"
+else
+echo"the value are not equal"
+fi
+
+#!=operator
+val=100
+if[$val!=50]
+then
+echo $val:"is not equals to 50"
+else
+echo "is equals to 50"
+fi
+
+  if(( $a==$b ))
+ then
+     echo a is equals to b
+ else
+     echo a is not equals to b
+ fi
+ if(( $a!=$b ))
+ then
+     echo a is not equals to b
+ else
+     echo a is equals to b
+ fi
+ if(( $a<$b ))
+ then
+     echo a is less than b
+ else
+     echo a is not less than b
+ fi
+ if(( $a<=$b ))
+ then
+     echo a is less than b
+ else
+     echo a is greater than or equals to b
+ fi
+ if(( $a>$b ))
+ then
+     echo a is greater than b
+ else
+     echo a is not greater than b
+ fi
+ if(( $a>=$b ))
+ then
+     echo a is greater than b
+ else
+     echo a is greater than or equals to b
+ fi
+ 
+
+ a = true
+ b = false
+ if(($a == "true" & $b == "true" ))
+ then
+    echo Both are true.
+ else
+    echo Both are not true.
+ fi
+ if(($a == "true" || $b == "true" ))
+ then
+    echo Atleast one of them is true.
+ else
+    echo None of them is true.
+ fi
+ if(( ! $a == "true" ))
+ then
+    echo "a" was intially false.
+ else
+    echo "a" was intially true.
+ fi
+ 
+  valid=true
+ count=1
+ while [ $valid ]
+ do
+ echo $count
+ if [ $count -eq 7]
+ then
+ break
+ fi
+ ((count++))
+ done
+
+ a=0
+ while [ "$a" -lt 10 ]
+ do
+   b="$a"
+   while [ "$b" -ge 0]
+   do
+      echo -n "$b "
+      b= `expr $b - 1`
+   done
+   echo a=`expr $a +1`
+ done
+
+
+ for (( counter=4; counter>0; counter-- ))
+ do
+ echo -n "$counter "
+ done
+ printf "\n"
+
+ s1="hii"
+ s2="World"
+ echo "$s1$s2"
+ s3=$s1+$s2
+ s3+="combined"
+ echo $s3
+ 
+ str="substring"
+ substr=${str:5:4}
+ echo $substr
+  
+ function f()
+ {
+   echo shell scripting
+ }
+ f
+
+ mine()
+ {
+   a=$(($1 * $2))
+   echo $a 
+ }
+ mine 20 10
+
+ echo "directory name"
+ read newone
+ `mkdir $newone`
+
+ echo "directory name"
+ read ndir
+ if [ -d "$ndir" ]
+ then
+ echo "directory exists"
+ else
+ `mkdir $ndir`
+ echo "created"
+ fi
